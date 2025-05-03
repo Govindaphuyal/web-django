@@ -3,7 +3,6 @@ from ..models import Crud
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 # Create your views here.
-@login_required(login_url='/crud/login/')
 def home(request):
     cruds= Crud.objects.all().order_by('-created_at')
     return render(request,'main/home.html',{'cruds':cruds})
