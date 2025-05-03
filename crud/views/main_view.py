@@ -30,7 +30,7 @@ def edit_blog(request, crud_id):
         return redirect('crud_detail', crud_id=crud.id)
 
     return render(request, 'main/edit_blog.html', {'crud': crud})
-@login_required(login_url='/crud/login/')
+# @login_required(login_url='/crud/login/')
 def create_blog(request):
     if(request.method=='POST'):
         title=request.POST.get('title')
